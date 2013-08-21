@@ -17,6 +17,6 @@ Currently only HTTP GET requests are impleneted. There are options:
 
 Sample usage: 
 
-    java -jar httpclient-options-1.0-SNAPSHOT-jar-with-dependencies.jar -I http://www.google.com
+    java -jar httpclient-cmd-1.0-SNAPSHOT-jar-with-dependencies.jar -I http://www.google.com
 
 
