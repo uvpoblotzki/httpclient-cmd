@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>io.github.uvpoblotzki</groupId>
-  <artifactId>httpclient-options</artifactId>
+  <artifactId>httpclient-cmd</artifactId>
   <version>1.0-SNAPSHOT</version>
 
   <properties>
