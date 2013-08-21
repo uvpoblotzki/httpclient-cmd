@@ -1,4 +1,4 @@
-# HttpClient Commandline Tool
+# HttpClient Command Line Tool
 
 You want `cURL`, but don't have it. You're on a Linux/Solaris machine, but can't install packages. There is no compiler installed. What ca you do? With the command line tool for Apache HttpClient you can do some basic commands like `cURL`.
 
