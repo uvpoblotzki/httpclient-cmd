@@ -90,7 +90,10 @@ public class Client {
   }
 
   private HttpClient createHttpClient() {
-    HttpClient httpClient = new DefaultHttpClient();
+    DefaultHttpClient httpClient = new DefaultHttpClient();
+    if (this.options.hasOption(OPT_SHORT_HEADER)) {
+      httpClient.setRedirectStrategy(new PrintResponseHeaderRedirectStrategy());
+    }
     return httpClient;
   }
 
