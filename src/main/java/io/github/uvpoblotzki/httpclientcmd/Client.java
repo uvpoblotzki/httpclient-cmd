@@ -18,7 +18,7 @@ public class Client {
   private static final Logger logger = LoggerFactory.getLogger(Client.class);
 
   private static final String OPT_SHORT_HEADER = "I";
-  private static final String OPT_LONG_HEADER = "header";
+  private static final String OPT_LONG_HEADER = "head";
   private static final String OPT_SHORT_LOCATION = "L";
   private static final String OPT_LONG_LOCATION = "location";
 
