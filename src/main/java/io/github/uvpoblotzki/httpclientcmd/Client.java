@@ -29,12 +29,16 @@ public class Client {
   public static void main(String[] args) {
     try {
       CommandLine options = parseCommandLine(args);
+      if (options.getArgs().length == 0) {
+        throw new ParseException("No URL given");
+      }
 
       Client client = new Client(options);
       client.run();
     } catch (ParseException e) {
       logger.error("Error parsing args {}", args, e);
-      System.err.println("Parsing failed. Reason: " + e.getMessage());
+      HelpFormatter formatter = new HelpFormatter();
+      formatter.printHelp("http-cmd", commandLineOptions());
     }
 
   }
