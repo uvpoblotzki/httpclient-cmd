@@ -21,6 +21,8 @@ public class Client {
   private static final String OPT_LONG_HEADER = "head";
   private static final String OPT_SHORT_LOCATION = "L";
   private static final String OPT_LONG_LOCATION = "location";
+  private static final String OPT_SHORT_ADD_HEADER = "H";
+  private static final String OPT_LONG_ADD_HEADER = "header";
 
   private CommandLine options;
 
@@ -74,6 +76,15 @@ public class Client {
       params.setBooleanParameter(ClientPNames.HANDLE_REDIRECTS, false);
       request.setParams(params);
     }
+    if (this.options.hasOption(OPT_SHORT_ADD_HEADER)) {
+      String[] headers = this.options.getOptionValues(OPT_SHORT_ADD_HEADER);
+      for (String header: headers) {
+        String[] nameValue = header.split(":");
+        if (nameValue.length == 2 && nameValue[0] != null && nameValue[1] != null) {
+          request.addHeader(nameValue[0], nameValue[1]);
+        }
+      }
+    }
     return request;
   }
 
@@ -107,6 +118,7 @@ public class Client {
 
     options.addOption(OPT_SHORT_HEADER, OPT_LONG_HEADER, false, "Show document info only");
     options.addOption(OPT_SHORT_LOCATION, OPT_LONG_LOCATION, false, "Follow redirects");
+    options.addOption(OPT_SHORT_ADD_HEADER, OPT_LONG_ADD_HEADER, true, "Custom header to parse to the server");
 
     return options;
   }
